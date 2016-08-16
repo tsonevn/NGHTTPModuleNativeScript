@@ -1,0 +1,15 @@
+<StackLayout>
+    <ListView [items]="source">
+        <template let-item="item" let-odd="odd" let-even="even">
+            <StackLayout>
+                <GridLayout rows="* auto" columns="100 *">
+                    <ActivityIndicator row="0" rowSpan="2" col="0" busy="true"></ActivityIndicator>
+                    <Image row="0" rowSpan="2" col="0" [src]="item.imageSource"></Image>
+                    <Label [text]="item.title" row="0" col="1" font-size="25px" textWrap="true"></Label>
+                    <Label [text]="item.datetime | date:'medium' " row="1" col="1" font-size="18px" textWrap="true"></Label>
+                </GridLayout>
+            </StackLayout>
+            
+        </template>
+    </ListView>
+</StackLayout>
